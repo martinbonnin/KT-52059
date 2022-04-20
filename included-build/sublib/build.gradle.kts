@@ -10,13 +10,4 @@ kotlin {
     jvm()
     macosX64()
     macosArm64()
-
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api(project(":sublib"))
-            }
-        }
-    }
 }
-

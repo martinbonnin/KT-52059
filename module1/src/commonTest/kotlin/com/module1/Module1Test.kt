@@ -6,7 +6,9 @@ import kotlin.test.assertEquals
 class Module1Test {
     @Test
     fun test() {
-        // com.lib.hello is not resolved here
+        // With kotlin.mpp.hierarchicalStructureSupport=false, `com.lib` gets resolved
         assertEquals("Hello from Lib", com.lib.hello)
+        // But not transitively exposed `com.sublib`
+        assertEquals("Hello from SubLib", com.sublib.hello)
     }
 }
